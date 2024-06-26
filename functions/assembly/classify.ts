@@ -18,5 +18,6 @@ export function classifyIssue(
   const output = model.invoke(input).predictions[0];
 
   console.log(`Issue ${id} classified as ${output.label}`);
+  // output.confidence
   return output.label;
 }

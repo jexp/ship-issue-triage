@@ -25,7 +25,7 @@ export function trendSummary(owner: string, repo: string): string {
   ]);
 
   input.temperature = 0.7;
-
+  
   const output = model.invoke(input);
 
   return output.choices[0].message.content.trim();
