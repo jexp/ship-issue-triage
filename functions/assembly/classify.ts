@@ -1,5 +1,5 @@
 import { models } from "@hypermode/functions-as";
-import { ClassificationModel } from "@hypermode/models-as/models/experimental/classification";
+import { ClassificationModel, ClassifierResult } from "@hypermode/models-as/models/experimental/classification";
 
 // This function classifies an issue based on its title.
 // The model used is tailored for GitHub issues.
@@ -9,7 +9,7 @@ export function classifyIssue(
   id: string,
   title: string,
   description: string,
-): string {
+): ClassifierResult {
   console.log(`Classifying issue ${id}`);
   const summary = `${title}\n${description}`;
 
@@ -19,5 +19,5 @@ export function classifyIssue(
 
   console.log(`Issue ${id} classified as ${output.label}`);
   // output.confidence
-  return output.label;
+  return output;
 }
